@@ -1,110 +1,122 @@
-# QR Code Hex Reader [![GitHub Release](https://img.shields.io/github/v/release/kibotu/hexqr)](https://github.com/kibotu/hexqr/releases)
+# QR Code Hex Reader
 
-A modern Android application that provides a comprehensive QR code scanning experience with advanced hex editor functionality. Unlike standard QR readers that only show interpreted content, **QR Code Hex Reader displays the actual raw bytes** of the QR code data, giving you complete transparency into what's encoded. This is essential for security analysis, detecting tracking redirects, debugging non-standard formats, and understanding exactly what data is stored in the QR code.
+[![GitHub Release](https://img.shields.io/github/v/release/kibotu/hexqr)](https://github.com/kibotu/hexqr/releases)
+
+> **See what others hide.** The only QR code reader that shows you the actual bytes, not just the interpreted content. Essential for security professionals, developers, and anyone who values transparency.
 
 ![QR Code Reader Demo](docs/record.gif)
 
-## Features
+---
 
-### Core Functionality
+## Why This Exists
 
-- **Raw Byte Inspection** - View the actual bytes stored in the QR code, not just interpreted content
-- **Real-time QR Code Scanning** - Continuous camera-based detection with visual feedback
-- **Smart Content Parsing** - Automatically detects and formats common QR code types (while preserving raw data access)
-- **Hex Editor** - Inspect raw byte data with hex representation and ASCII display
-- **Security Analysis** - Detect tracking redirects, hidden data, and non-standard encodings
-- **Modern UI** - Clean Material Design 3 interface with dark mode support
-- **Offline-First** - All processing happens locally, no network required
+Every QR code reader tells you *what* it thinks the code contains. But what if you need to know *exactly* what's encoded? 
 
-### Why Raw Bytes Matter
+QR codes can hide tracking redirects, non-standard encodings, and unexpected data that standard parsers miss. This app gives you the transparency to see the raw bytes—the ground truth—so you can make informed decisions about what you're scanning.
 
-Most QR code readers only show you the interpreted content (e.g., "https://example.com"). But QR codes can contain:
-- **Tracking redirects** - URLs that redirect through tracking services before reaching the destination
-- **Non-standard formats** - Custom encodings that standard parsers don't recognize
-- **Hidden data** - Additional bytes that aren't part of the main content
-- **Encoding variations** - Different character encodings that affect how content is displayed
+**Built for those who believe in seeing the full picture.**
 
-By showing the actual bytes, you can:
-- **Verify URLs** - See the exact destination before clicking, avoiding tracking redirects
-- **Debug issues** - Understand why a QR code isn't working with standard readers
-- **Security audit** - Inspect QR codes for suspicious content or hidden data
-- **Learn** - Understand how QR codes encode different data types
+---
 
-### Supported Formats
+## What Makes This Different
 
-The app intelligently parses and displays content from various QR code formats:
+### 🔍 **Raw Byte Transparency**
+Unlike standard readers that only show interpreted content, we display the actual raw bytes. This isn't just a feature—it's the foundation of trust and security.
 
-- **URLs** - Protocol, domain, path, query parameters, and fragments
-- **Contacts (vCard)** - Name, phone numbers, emails, address, organization
-- **WiFi Networks** - SSID, security type, password, hidden network flag
-- **Email** - Address, subject, and body content
-- **SMS** - Phone number and message body
-- **Geographic Location** - Latitude, longitude, and altitude
-- **Calendar Events** - Title, dates, location, and description
-- **Plain Text** - Raw text content with encoding information
+### 🛡️ **Security-First Design**
+Detect tracking redirects before clicking. Verify URLs. Audit suspicious content. All without sending data anywhere—everything processes locally on your device.
 
-## Installation
+### 🎯 **Smart Parsing, Full Control**
+We intelligently parse common formats (URLs, contacts, WiFi, email, SMS, locations, calendar events) while always preserving access to the underlying raw data. Best of both worlds.
 
-### For End Users
+### ⚡ **Offline-First Architecture**
+No network required. No data collection. No tracking. Your privacy isn't an afterthought—it's built into every design decision.
 
-1. Download the latest release APK from [GitHub Releases](https://github.com/yourusername/hexqrapp/releases)
-2. Enable "Install from Unknown Sources" on your Android device (if needed)
-3. Install the APK file
-4. Grant camera permission when prompted
+---
 
-**System Requirements:**
-- Android 6.0 (API 23) or higher
-- Camera hardware
-- Internet connection not required
+## Quick Start
 
-### Permissions
+### For Users
 
-The app requires the following permission:
-- **Camera** - Required for QR code scanning
+1. **Download** the latest APK from [GitHub Releases](https://github.com/kibotu/hexqr/releases)
+2. **Install** on your Android device (6.0+)
+3. **Grant** camera permission when prompted
+4. **Scan** a QR code and tap "Hex Editor" to see the raw bytes
 
-All camera data is processed locally on your device. No data is transmitted over the network.
+**System Requirements:** Android 6.0 (API 23) or higher, camera hardware
 
-## Usage
+### For Developers
 
-1. Open the app and grant camera permission
-2. Point your camera at a QR code
-3. The app will automatically detect and parse the content
-4. View formatted content in the main display area
-5. **Tap "Hex Editor" to inspect the actual raw bytes** - See exactly what's encoded in the QR code
-6. Use copy/share buttons to export content
+```bash
+# Clone and build
+git clone https://github.com/kibotu/hexqr.git
+cd hexqr
+./gradlew assembleDebug
+```
 
-**Pro Tip**: Always check the hex editor view before clicking URLs to verify the destination and detect any tracking redirects or suspicious content.
+See [Building](#building) for detailed setup instructions.
+
+---
+
+## Supported Formats
+
+The app intelligently parses and displays:
+
+- **URLs** — Protocol, domain, path, query parameters, fragments
+- **Contacts (vCard)** — Name, phone, email, address, organization
+- **WiFi Networks** — SSID, security type, password, hidden flag
+- **Email** — Address, subject, body
+- **SMS** — Phone number and message
+- **Geographic Location** — Latitude, longitude, altitude
+- **Calendar Events** — Title, dates, location, description
+- **Plain Text** — Raw text with encoding information
+
+All formats maintain full access to raw byte data through the hex editor.
+
+---
+
+## Privacy & Security
+
+We take privacy seriously. Here's what that means in practice:
+
+- ✅ **Zero network requests** — Everything processes offline
+- ✅ **No data collection** — No analytics, no tracking, no telemetry
+- ✅ **Local processing only** — Camera data never leaves your device
+- ✅ **No automatic storage** — Content is only saved when you explicitly share it
+
+Your data stays yours. Always.
+
+---
 
 ## Building
 
 ### Prerequisites
 
-- **Android Studio** - Hedgehog (2023.1.1) or later
-- **JDK** - Version 21 or higher
-- **Android SDK** - API 23+ (Android 6.0)
-- **Gradle** - Included via wrapper
+- **Android Studio** — Hedgehog (2023.1.1) or later
+- **JDK** — Version 21 or higher
+- **Android SDK** — API 23+ (Android 6.0)
+- **Gradle** — Included via wrapper
 
-### Build Steps
+### Setup
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/kibotu/hexqrapp.git
-   cd hexqrapp
+   git clone https://github.com/kibotu/hexqr.git
+   cd hexqr
    ```
 
-2. **Configure signing (for release builds)**
+2. **Configure signing** (for release builds)
    ```bash
    cp keystore.properties.example keystore.properties
    # Edit keystore.properties with your release keystore credentials
    ```
 
 3. **Open in Android Studio**
-   - Open Android Studio
    - Select "Open an Existing Project"
    - Navigate to the cloned directory
    - Wait for Gradle sync to complete
 
-4. **Build the project**
+4. **Build**
    ```bash
    # Debug build
    ./gradlew assembleDebug
@@ -113,61 +125,55 @@ All camera data is processed locally on your device. No data is transmitted over
    ./gradlew assembleRelease
    ```
 
-   APK files will be generated in `app/build/outputs/apk/`
+   APK files are generated in `app/build/outputs/apk/`
 
-## Tech Stack
+### Troubleshooting
 
-- **Language**: Kotlin 2.2.21
-- **UI**: Jetpack Compose (BOM 2025.11.00)
-- **Camera**: CameraX + ML Kit Barcode Scanning
-- **DI**: Hilt
-- **Architecture**: MVVM with StateFlow
-- **Minimum SDK**: API 23 (Android 6.0)
-- **Target SDK**: API 36 (Android 15)
-
-## Privacy & Security
-
-- **No Network Requests** - All processing happens offline
-- **No Data Collection** - No analytics or tracking
-- **Local Processing Only** - Camera data never leaves your device
-- **No Storage** - Scanned content is not saved unless explicitly shared by the user
-- **Privacy-First** - Respects user privacy and data protection
-
-
-## Troubleshooting
-
-### Camera Not Working
-
-- Ensure camera permission is granted in device settings
-- Check that no other app is using the camera
-- Restart the app if issues persist
-
-### QR Code Not Detected
-
-- Ensure adequate lighting
-- Hold the device steady
-- Keep QR code within the camera frame
-- Clean the camera lens
-
-### Build Issues
-
-- Ensure JDK 21 is installed and configured
-- Sync Gradle files in Android Studio
-- Clean and rebuild: `./gradlew clean build`
-- Check that Android SDK API 23+ is installed
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-## Acknowledgments
-
-Built with modern Android development tools and libraries:
-- [Jetpack Compose](https://developer.android.com/jetpack/compose)
-- [CameraX](https://developer.android.com/training/camerax)
-- [ML Kit](https://developers.google.com/ml-kit)
-- [Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
+- **Camera issues:** Ensure permission is granted and no other app is using the camera
+- **QR not detected:** Check lighting, hold steady, keep code in frame
+- **Build failures:** Verify JDK 21 is installed, sync Gradle, clean build: `./gradlew clean build`
 
 ---
 
-**Note**: This app is designed to be simple, fast, and privacy-focused. We believe in keeping things straightforward and user-friendly while providing powerful features for those who need them.
+## Technical Details
+
+**Architecture:** MVVM with StateFlow  
+**Language:** Kotlin 2.2.21  
+**UI Framework:** Jetpack Compose (BOM 2025.11.00)  
+**Camera:** CameraX + ML Kit Barcode Scanning  
+**Dependency Injection:** Hilt  
+**Minimum SDK:** API 23 (Android 6.0)  
+**Target SDK:** API 36 (Android 15)
+
+Built with modern Android best practices, focusing on maintainability, performance, and user experience.
+
+---
+
+## Contributing
+
+We welcome contributions! Whether it's fixing bugs, adding features, or improving documentation, your help makes this project better.
+
+**How to contribute:**
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+For major changes, please open an issue first to discuss your ideas. We're always happy to collaborate.
+
+---
+
+## Acknowledgments
+
+Built with excellent open-source tools:
+
+- [Jetpack Compose](https://developer.android.com/jetpack/compose) — Modern declarative UI
+- [CameraX](https://developer.android.com/training/camerax) — Camera abstraction layer
+- [ML Kit](https://developers.google.com/ml-kit) — Barcode scanning
+- [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) — Dependency injection
+
+Thank you to the Android developer community for these incredible tools.
+
+---
+
+**Simple. Transparent. Privacy-focused.** That's the goal, and we're working to make it better every day.
